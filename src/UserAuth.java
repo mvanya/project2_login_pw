@@ -1,4 +1,8 @@
+import java.util.Scanner;
+
 public class UserAuth {
+
+    // где модификаторы доступа?
     String login;
     String pw;
     Role role;
@@ -27,6 +31,27 @@ public class UserAuth {
             }
         }
         throw new RoleException("No permission");
+    }
+    public static void firstAuthorization() {
+        boolean flag = true;
+
+        while (flag) {
+
+            authorization();
+
+            if (Main.currentUser != null) {
+                flag = false;
+            }
+
+        }
+    }
+    public static void authorization() {
+        System.out.println("Enter login and password");
+        System.out.print("login: ");
+        String login = Main.scr.nextLine();
+        System.out.print("Password: ");
+        String pw = Main.scr.nextLine();
+        Main.currentUser = UserAuth.auth(login, pw, Main.users);
     }
 }
 

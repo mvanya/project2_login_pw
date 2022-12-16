@@ -10,20 +10,14 @@ public class ShopList extends Notes{
         return shopName;
     }
 
-    public String setShopName() {
+    public void setShopName() {
         this.shopName = shopName;
-        return null;
     }
 
     @Override
     public void printNotes() {
         super.printNotes();
         System.out.println("Shop name: " + shopName);
-    }
-
-    @Override
-    public void displayAuthor() {
-        super.displayAuthor();
     }
 }
 
